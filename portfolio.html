@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<head id="top">My Portfolio</head>
+
+<html>
+     <div class="navbar">
+         <nav>
+            <ul>
+                <li>
+                    <a href="#about">about</a>
+                </li>
+                <li>   
+                    <a href="#contact">contact</a>
+                </li> 
+                <li>
+                    <a href="#skills">skills</a>
+                </li>  
+                <li>
+                    <a href="#links">links</a>
+                </li>  
+                
+            </ul>
+         </nav>
+        </div>
+    <title>my_portfolio</title>
+    <body>
+        
+        <h1>HI FRIENDS</h1>
+        <div class="hero description">
+            <h2 id="about">About Me</h2>
+        <p id="scorecard">
+            Hello I am Prachujya. A first year ECE B.Tech student at NIT Silchar.My Scholar ID - 26EC10119.
+            I am very interested in software developement as well as hardware developement.If you have same interests as me 
+            you can come along with me.
+        </p>    
+
+        </div>
+
+        <div class="skills">
+            <h3 id="skills">SKILLS</h3>
+            <ul>
+                <li>C++</li>
+                <li>Pyhton</li>
+                <li>Html</li>
+                <li>CSS</li>
+            </ul>
+        </div>
+
+        <div class="links" id="links">
+           <a href="3https://www.linkedin.com/in/prachujya-priyam-gogoi-114233413/">Linkedin</a>    
+            <a href="#https://github.com/sessions/verified-device/mobile?auto=true">GitHub</a>  
+           <a href="#https://github.com/prachujyagogoi95-alt/My-Portfolio.git">My Portfolio</a>   
+        </div>
+
+        <div class="contact">
+           <h4 id="contact">Phone: 8761858672</h4>
+           <h4>email: prachujyagogoi95@gmail.com</h4>
+
+        </div>
+
+        <footer class="foot">
+            <p>  © 2026 Prachujya gogoi portfolio. All rights reserved.</p>
+
+        </footer>
+
+         <div class="top">
+           <a href="#top">Back to top ↑</a>
+        </div>
+       
+    </body>
+
+</html>
+
+
+<style>
+:root {
+  --bg: #f6f5f1;
+  --ink: #14181b;
+  --ink-muted: #5b6570;
+  --line: rgba(20, 24, 27, 0.12);
+  --teal: #16867a;
+  --teal-soft: rgba(22, 134, 122, 0.12);
+  --copper: #b4652e;
+  --copper-soft: rgba(180, 101, 46, 0.14);
+  --surface: #fdfdfb;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --nav-h: 64px;
+  --max-w: 780px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 24px);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Faint fixed grid texture, kept very quiet */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.35;
+  mask-image: radial-gradient(circle at 50% 0%, black, transparent 75%);
+}
+
+/* -------------------- Nav -------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(246, 245, 241, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar.is-scrolled {
+  box-shadow: 0 8px 24px -16px rgba(20, 24, 27, 0.25);
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.navbar nav ul li a {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-muted);
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.navbar nav ul li a:hover {
+  color: var(--ink);
+  background: var(--teal-soft);
+}
+
+.navbar nav ul li a.active {
+  color: var(--teal);
+  background: var(--teal-soft);
+}
+
+/* -------------------- Layout shell -------------------- */
+h1, .hero, .skills, .links, .contact, footer.foot {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+h1 {
+  padding-top: calc(var(--nav-h) + 64px);
+  margin: 0 0 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+h1::before {
+  content: '// ';
+  color: var(--ink-muted);
+}
+
+/* -------------------- Hero / About -------------------- */
+.hero.description {
+  padding-top: 8px;
+  padding-bottom: 72px;
+}
+
+.hero.description h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+
+#scorecard {
+  max-width: 58ch;
+  color: var(--ink-muted);
+  font-size: 1.05rem;
+}
+
+#scorecard::first-line {
+  color: var(--ink);
+}
+
+/* -------------------- Section framing -------------------- */
+/* Every content section gets a small mono eyebrow + trace dot,
+   echoing a schematic label, and a left rule that the animated
+   trace line runs alongside. */
+.skills, .links, .contact {
+  padding: 56px 28px;
+  border-top: 1px solid var(--line);
+}
+
+.skills h3,
+.contact h4:first-of-type {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills h3::before,
+.contact::before {
+  content: '';
+}
+
+.skills h3::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 0 3px var(--teal-soft);
+}
+
+/* -------------------- Skills as IC-style pins -------------------- */
+.skills ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.skills ul li {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills ul li::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 2px;
+  background: var(--line);
+}
+
+.skills ul li:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+  box-shadow: 0 6px 16px -10px rgba(22, 134, 122, 0.5);
+}
+
+/* -------------------- Links -------------------- */
+.links {
+  display: grid;
+  gap: 12px;
+}
+
+.links h3 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0 0 8px;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: border-color 0.25s ease, transform 0.2s ease, background 0.25s ease;
+}
+
+.links a::after {
+  content: '→';
+  font-family: var(--font-mono);
+  color: var(--ink-muted);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.links a:hover {
+  border-color: var(--copper);
+  background: var(--copper-soft);
+  transform: translateX(4px);
+}
+
+.links a:hover::after {
+  color: var(--copper);
+  transform: translateX(3px);
+}
+
+/* -------------------- Contact -------------------- */
+.contact h4 {
+  margin: 0 0 8px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.contact h4:first-of-type {
+  margin-bottom: 16px;
+}
+
+/* -------------------- Footer -------------------- */
+footer.foot {
+  padding: 32px 28px 120px;
+  border-top: 1px solid var(--line);
+}
+
+footer.foot p {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+/* -------------------- Back to top -------------------- */
+.top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.top a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  box-shadow: 0 10px 24px -12px rgba(20, 24, 27, 0.45);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.top a:hover {
+  transform: translateY(-3px);
+  background: var(--teal);
+}
+
+/* -------------------- Signature trace layer (JS-injected) -------------------- */
+#trace-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#trace-path {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 2;
+  opacity: 0.5;
+}
+
+#trace-node {
+  fill: var(--copper);
+}
+
+/* -------------------- Reveal-on-scroll -------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- Accessibility -------------------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 640px) {
+  .navbar nav ul { gap: 0; }
+  .navbar nav ul li a { padding: 8px 12px; font-size: 0.7rem; }
+  h1 { padding-top: calc(var(--nav-h) + 40px); }
+  .hero.description { padding-bottom: 48px; }
+  #trace-layer { opacity: 0.6; }
+}
+</style>
