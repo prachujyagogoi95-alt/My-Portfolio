@@ -136,6 +136,134 @@
                 font-size: 36px;
             }
         }
+
+        
+        body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: #111;
+    color: white;
+}
+
+body.dark section {
+    background-color: #1a1a1a;
+}
+
+body.dark .project-card {
+    background-color: #222;
+    color: white;
+}
+
+#aiBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+#chatBox {
+    display: none;
+    position: fixed;
+    bottom: 85px;
+    right: 25px;
+    width: 350px;
+    height: 450px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+#chatHeader {
+    background: #2563eb;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+#closeChat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#chatMessages {
+    height: 340px;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+#chatInputArea {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#userInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#sendBtn {
+    margin-left: 8px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+#chatInputArea {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    gap: 8px;
+
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ddd;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 20px;
+
+    outline: none;
+}
+
+#sendBtn {
+    width: 45px;
+    border: none;
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: white;
+
+    cursor: pointer;
+}
+
     </style>
 </head>
 
@@ -259,6 +387,36 @@
 
     </script>
 
+     <button id="aiBtn">🤖 Ask My AI</button>
+
+    <div id="chatBox">
+
+    <div id="chatHeader">
+        🤖 Prachujya's AI
+        <button id="closeChat">×</button>
+    </div>
+
+    <!-- Messages appear here -->
+    <div id="chatMessages">
+        <p>Hi! 👋 Ask me anything about Prachujya.</p>
+    </div>
+
+    <!-- MESSAGE INPUT SECTION -->
+    <div id="chatInputArea">
+
+        <input 
+            type="text" 
+            id="userInput" 
+            placeholder="Type your message..."
+        >
+
+        <button id="sendBtn">➤</button>
+
+    </div>
+
+</div>
+
+
 </body>
 </html>
 
@@ -281,4 +439,62 @@ const emailBtn = document.getElementById("emailBtn");
 emailBtn.addEventListener("click", function() {
     window.location.href = "mailto:prachujyagogoi95@gmail.com";
 });
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", function() {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        themeBtn.textContent = "☀️";
+    } else {
+        themeBtn.textContent = "🌙";
+    }
+});
+
+const aiBtn = document.getElementById("aiBtn");
+const chatBox = document.getElementById("chatBox");
+const closeChat = document.getElementById("closeChat");
+
+aiBtn.addEventListener("click", function() {
+    chatBox.style.display = "block";
+});
+
+closeChat.addEventListener("click", function() {
+    chatBox.style.display = "none";
+});
+
+const sendBtn = document.getElementById("sendBtn");
+const userInput = document.getElementById("userInput");
+const chatMessages = document.getElementById("chatMessages");
+
+sendBtn.addEventListener("click", function() {
+    const message = userInput.value;
+
+    if (message === "") {
+        return;
+    }
+
+    chatMessages.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+
+    let reply = "";
+
+    if (message.toLowerCase().includes("classpilot")) {
+        reply = "ClassPilot is my coaching institute management project.";
+    } 
+    else if (message.toLowerCase().includes("skill")) {
+        reply = "I work with JavaScript, C++, Python, web development and VLSI.";
+    } 
+    else if (message.toLowerCase().includes("who")) {
+        reply = "I'm Prachujya's portfolio assistant. He's an ECE student at NIT Silchar.";
+    } 
+    else {
+        reply = "I'm still learning! Try asking me about ClassPilot, my skills, or me.";
+    }
+
+    chatMessages.innerHTML += `<p><strong>AI:</strong> ${reply}</p>`;
+
+    userInput.value = "";
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+});
+    
 </script>
