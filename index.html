@@ -17,7 +17,7 @@
             background: #f4f7fb;
             color: #1f2937;
         }
-
+        
         nav {
             background: #111827;
             color: white;
@@ -25,6 +25,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+           
+            
         }
 
         nav h2 {
@@ -34,9 +36,15 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
+            margin-left: 30px;
+            
         }
-        .unique:hover{text-shadow: #121213;}
+
+        
+        .unique:hover{
+            
+            text-shadow: #121213;
+        }
 
         section {
             padding: 70px 8%;
@@ -114,10 +122,10 @@
         }
 
         .skill {
-            background: white;
+            background: rgb(35, 60, 107);
             padding: 12px 18px;
             border-radius: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 3px 10px rgba(75, 73, 73, 0.08);
         }
 
         footer {
@@ -137,7 +145,6 @@
             }
         }
 
-        
         body {
     transition: background-color 0.3s, color 0.3s;
 }
@@ -264,7 +271,7 @@ body.dark .project-card {
     cursor: pointer;
 }
 
-    </style>
+ </style>
 </head>
 
 <body>
@@ -277,6 +284,7 @@ body.dark .project-card {
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
         </div>
+        <button id="themeBtn">🌙</button>
     </nav>
 
     <section class="hero">
@@ -310,8 +318,8 @@ body.dark .project-card {
         <h2 class="section-title">About Me</h2>
 
         <p>
-            I am a student interested in software development,
-            electronics and building useful products.
+            I am a student at NIT SILCHAR, interested in software development,
+            electronics and building useful products. Always eagar to learn and collaborate.
         </p>
 
     </section>
@@ -386,8 +394,7 @@ body.dark .project-card {
         // YOUR JAVASCRIPT GOES HERE
 
     </script>
-
-     <button id="aiBtn">🤖 Ask My AI</button>
+    <button id="aiBtn">🤖 Ask My AI</button>
 
     <div id="chatBox">
 
@@ -416,7 +423,6 @@ body.dark .project-card {
 
 </div>
 
-
 </body>
 </html>
 
@@ -431,7 +437,7 @@ body.dark .project-card {
 
 const github = document.getElementById("github");
 github.addEventListener("click",function(){
-    window.open("https://github.com/", "_blank");
+    window.open("https://github.com/prachujyagogoi95-alt/My-Portfolio", "_blank");
 });
 
 const emailBtn = document.getElementById("emailBtn");
@@ -439,6 +445,7 @@ const emailBtn = document.getElementById("emailBtn");
 emailBtn.addEventListener("click", function() {
     window.location.href = "mailto:prachujyagogoi95@gmail.com";
 });
+
 const themeBtn = document.getElementById("themeBtn");
 
 themeBtn.addEventListener("click", function() {
@@ -496,5 +503,5 @@ sendBtn.addEventListener("click", function() {
     userInput.value = "";
     chatMessages.scrollTop = chatMessages.scrollHeight;
 });
-    
+
 </script>
